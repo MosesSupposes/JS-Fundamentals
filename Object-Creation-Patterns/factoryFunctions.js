@@ -8,4 +8,16 @@ function createCircle(radius) {
 }
 
 const myCircle = createCircle(1);
-myCircle.draw();
+myCircle.draw(); // draw
+
+// Creating private variables in factory function via closure
+const createDog = () => {
+    const sound = 'woof';
+    return {
+        talk: () => console.log(sound)
+    }
+};
+
+const sniffles = createDog();
+sniffles.talk();  // 'woof'
+
