@@ -1,6 +1,6 @@
 const cat = {
     makeSound() {
-        console.log(this.sound)
+        console.log(this.sound);
     }
 }
 
@@ -11,12 +11,12 @@ function objectCreate(proto) {
     return obj;
 }
 
-const mark = objectCreate(cat)
+const mark = objectCreate(cat);
 mark.sound = 'mewuuUUF';
-mark.makeSound();
+mark.makeSound(); // 'mewuuUUF'
 
 const waffles = objectCreate(cat);
 waffles.sound = 'mrrrrroooooow';
-waffles.makeSound();
+waffles.makeSound(); // mrrrrooooow'
 
 console.log('Is mark a cat?', cat.isPrototypeOf(mark)); //  Is mark a cat? true
