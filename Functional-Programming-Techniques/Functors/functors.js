@@ -30,7 +30,7 @@ console.log(plus1(3)); // 4
 console.log(plus1([3, 4])); // [4, 5]
 console.log(plus1('ABC')); // BCD
 
-// If we want to extend the functionality of what could be a one liner (the core purpose of the function can be found on line 21) to be applicable to other data types (as seen on lines 31-33), do you see how much overhead has to be bundled into an otherwise simple function? This is where functors come in to the rescue.
+// If we want to extend the functionality of what could be a one liner (the core purpose of the function can be found on line 26) to be applicable to other data types (as seen on lines 29-31), do you see how much overhead has to be bundled into an otherwise simple function? This is where functors come in to the rescue.
 
 // Here's how we can apply a common functor to refactor our plus1 function to a simpler, purer implementation:
 
@@ -44,7 +44,7 @@ console.log([3,4].map(plus1)); // [4, 5]
 
 // Do you see how we can create multiple operators (ex: minus1, timesX, divideX, etc.) without having to duplicate the type checking logic everywhere? That's the power of functors!
 
-// But what about the example on line 29 where we wanted to plus1 a string? We will build our own functor to solve that problem.
+// But what about the example on line 31 where we wanted to plus1 a string? We will build our own functor to solve that problem.
 
 function stringFunctor(value, fn) {
     let chars = value.split('');
@@ -55,12 +55,6 @@ function stringFunctor(value, fn) {
     }).join('');
 }
 
-// Helper function
-function minus1(value) {
-    return value - 1
-}
-
-console.log([3,4].map(minus1)); // returns [2, 3]
 console.log(stringFunctor('ABC', plus1)); // returns 'BCD'
 console.log(stringFunctor('XYZ', minus1)); // returns 'WXY' 
 
