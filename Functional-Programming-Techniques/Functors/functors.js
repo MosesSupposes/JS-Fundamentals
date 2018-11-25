@@ -56,5 +56,5 @@ function stringFunctor(value, fn) {
 }
 
 console.log(stringFunctor('ABC', plus1)); // returns 'BCD'
-console.log(stringFunctor('XYZ', minus1)); // returns 'WXY' 
+console.log(stringFunctor('LMN', plus1)); // returns 'MNO' 
 
