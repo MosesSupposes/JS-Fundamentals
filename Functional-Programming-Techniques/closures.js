@@ -1,10 +1,17 @@
+// Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+
 // Basic example
-const createAdder = x => y => x + y;
+function foo() {
+	var a = 2;
 
-const add3 = createAdder(3);
+	function bar() {
+		console.log( a );
+	}
 
-console.log(add3(2));
-console.log(add3(3));
+	bar(); 
+}
+
+foo(); // 2
 
 // Another basic example using jQuery's ajax mehtod
 function sendRequest() {
@@ -16,6 +23,14 @@ function sendRequest() {
         }
     });
 }
+
+// Closure with higher order function
+const createAdder = x => y => x + y;
+
+const add3 = createAdder(3);
+
+console.log(add3(2)); // 5
+console.log(add3(3)); // 6
 
 // Here's a more practical example of using closure in conjunction with a higher order function.
 
