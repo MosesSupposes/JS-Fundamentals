@@ -5,7 +5,8 @@ let dog = {
     }
 }
 
-dog.talk() // "Woof"
+// Implicit binding of this
+dog.talk() //"Woof"
 
 let talkFunction = dog.talk
 talkFunction() // undefined
@@ -24,6 +25,7 @@ talkFunction() returns undefined because line 10 is the same as saying this:
 /* One way to fix this is using the bind method to create a copy of talkFunction, and set 'this' to be equal to the object we specify
 */
 
+// Explicit binding of this
 let boundFunction = talkFunction.bind(dog)
 boundFunction() // "woof"
 

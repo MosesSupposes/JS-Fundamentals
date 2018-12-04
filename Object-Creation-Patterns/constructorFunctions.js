@@ -8,8 +8,8 @@ function Circle (radius) {
 
 const circle = new Circle(1); 
 /* When we use the 'new' operator, four things happen:
-    1. An empty object is created
-    2. Sets the prototype of the newly created object to the object that immediately follows the new keyword 
-    3. Calls the constructor function and points 'this' to the newly created object
-    4. it returns the newly created object
+    1. An empty object is created.
+    2. The newly constructed object is prototype-linked.
+    3. The newly constructed object is set as the 'this' binding for that function call.
+    4. Unless the function returns its own alternate object, the 'new'-invoked function call will automatically return the newly constructed object.
 */
