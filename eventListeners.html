@@ -1,0 +1,31 @@
+<div style="text-align:center">
+    <h4>Press ⬆️ to make balloon inflate and ⬇️ to make it deflate</h4>
+    <p id="balloon" style="font-size:30px">🎈</p>
+    <p id="explosion" style="display:none">💥</p>
+</div>
+
+<script>
+    const balloon = document.querySelector('#balloon');
+    const explosion = document.querySelector('#explosion');
+    const upArrow = 38;
+    const downArrow = 40;
+
+    function inflate(e) {
+        let size = parseInt(balloon.style.fontSize);
+        console.log(e.keyCode);
+        if (e.keyCode == upArrow) {
+            e.preventDefault();
+            size += 10;
+            balloon.style.fontSize = size + 'px';
+            if (size >= 200) {
+                balloon.textContent = explosion.textContent;
+                this.removeEventListener('keydown', inflate);
+            }
+        } else if (e.keyCode == downArrow) {
+            e.preventDefault();
+            size -= 10;
+            balloon.style.fontSize = size + 'px';
+        }
+    }
+    document.addEventListener('keydown', inflate, false);
+</script>
