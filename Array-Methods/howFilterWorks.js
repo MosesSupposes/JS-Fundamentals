@@ -7,13 +7,14 @@ let animals = [
     {name: 'Jimmy', species: 'fish'}
 ];
 
-function filterDogs() {
-    let dogs = [];
-    for (animal of animals) {
-        if(animal.species === 'dog') 
-            dogs.push(animal);
+function filter(arr, cb) {
+    let filteredArray = [];
+    arr.forEach(index => {
+        // If the index passes the callback's condition, push it to the filtered array 
+        cb(index) && filterArray.push(index)
     }
-    return dogs;
+    // Return only the values that passed the test provided in the callback
+    return filteredArray;
 }
 
-filterDogs() // [{name: 'Caro, species: dog}, { name: 'Hamilton', species: 'dog' }]
+filter(animals, animal => animal.species === 'dog') // [{name: 'Caro, species: dog}, { name: 'Hamilton', species: 'dog' }]
