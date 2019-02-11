@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#mainWrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: .75em 10%;
+		}
+
+		#controller {
+			align-self: flex-end;
+		}
+
+		#mainDisplay {
+			font-size: 3em;
+		}
+
+		#errorDisplay {
+			color:red;
+		}
+	</style>
+	<title>Pausable Output With Generators!</title>
+</head>
+<body>
+	<main id="mainWrapper">
+		<div id="controller">
+			<select id="scriptChoice">
+				<option id="alphabet">Sing ABC's</option>
+				<option id="director">Direct Movie</option>
+			</select>
+			<select id="speedChoice">
+				<option id="slow">Slow</option>
+				<option id="normal">Normal</option>
+				<option id="fast">Fast</option>
+				<option id="superFast">Super Fast</option>
+			</select>
+			<button id="startButton">Start</button>
+			<button id="stopButton">Stop</button>
+		</div>
+		<div id="mainDisplay"></div>
+		<div id="errorDisplay"></div>
+	</main>
+	<script src="generators.js"></script>
+</body>	
+</html>
