@@ -1,0 +1,29 @@
+<!-- async/await is a subset of generators that provides a new syntactic sugar on top of generators and promises. It enables you to write asynchronous code that looks synchronous. It also makes error handling very simple and straight forward. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		(async (loginName) => {
+			try {
+				var response = await fetch(`https://api.github.com/users/${loginName}/followers`)
+				var json = await response.json()
+				var followerList = json.map(user => user.login)
+				console.log(followerList)
+			} catch(e) {
+				console.error('Data din\'t load', e)
+			}
+		})('MosesSupposes')
+
+		// Logs all of my Github followers to the console on page load
+
+	</script>
+	<title>Async and Fetch</title>
+</head>
+<body>
+</body>	
+</html>
+
+
+
+
