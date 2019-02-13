@@ -141,7 +141,7 @@ startButton.addEventListener('click', function startScript() {
     }
 })
 
-// Pause the script when the user click's 'Stop'
+// Pause the script when the user clicks 'Stop'
 stopButton.addEventListener('click', function stopScript() {
     state.running = false
     // Clear the error display
